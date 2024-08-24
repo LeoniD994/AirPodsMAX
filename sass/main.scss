@@ -1,0 +1,65 @@
+@import "./utils.scss/reset.scss";
+@import "./components.scss/header";
+@import "./components.scss/choose-color";
+@import "./components.scss/composition";
+@import "./components.scss/case";
+@import "./components.scss/audio";
+@import "./components.scss/footer";
+
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: #000;
+  font-weight: 500;
+  line-height: 1.2;
+  font-size: 16px;
+}
+
+.container {
+  max-width: 1220px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+.main__title {
+  font-weight: 700;
+  font-size: 64px;
+  margin-bottom: 20px;
+}
+.content-item {
+  display: none;
+}
+@media (max-width: 1200px) {
+  .main__title {
+    font-size: 36px;
+  }
+}
+@media (max-width: 414px) {
+  .main__title {
+    font-size: 28px;
+  }
+}

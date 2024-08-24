@@ -1,0 +1,23 @@
+.footer {
+  padding: 250px 0 40px;
+  background-color: #000;
+  z-index: -2;
+  position: relative;
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+}
+
+.footer__text {
+  margin: 20px 0;
+}
+
+.footer__list {
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+/* Стиль для кнопки прокрутки вгору */
