@@ -43,23 +43,75 @@ document.querySelectorAll(".menu__link").forEach((anchor) => {
   });
 });
 
-
 // Отримуємо кнопку
-const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
 // Додаємо обробник події для відображення кнопки при прокручуванні сторінки
-window.addEventListener('scroll', () => {
+window.addEventListener("scroll", () => {
   if (window.pageYOffset > 300) {
-    scrollToTopBtn.style.display = 'block';
+    scrollToTopBtn.style.display = "block";
   } else {
-    scrollToTopBtn.style.display = 'none';
+    scrollToTopBtn.style.display = "none";
   }
 });
 
 // Додаємо обробник події для натискання на кнопку
-scrollToTopBtn.addEventListener('click', () => {
+scrollToTopBtn.addEventListener("click", () => {
   window.scrollTo({
     top: 0,
-    behavior: 'smooth'
+    behavior: "smooth",
   });
 });
+
+// modal
+const buyButton = document.querySelector(".menu__btn");
+const backdrop = document.getElementById("backdrop");
+const formContainer = document.getElementById("orderFormContainer");
+const closeFormButton = document.getElementById("closeForm");
+const orderSummaryContainer = document.getElementById("orderSummary");
+
+buyButton.addEventListener("click", () => {
+  backdrop.style.display = "block";
+  formContainer.style.display = "block";
+  orderSummaryContainer.style.display = "none";
+});
+
+backdrop.addEventListener("click", () => {
+  closeForm();
+});
+
+closeFormButton.addEventListener("click", () => {
+  closeForm();
+});
+
+function closeForm() {
+  backdrop.style.display = "none";
+  formContainer.style.display = "none";
+  orderSummaryContainer.innerHTML = "";
+}
+
+document
+  .getElementById("orderForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const address = document.getElementById("address").value;
+    const color = document.getElementById("color").value;
+    const quantity = document.getElementById("quantity").value;
+
+    const orderSummary = `
+        <h2>Order Summary</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Address:</strong> ${address}</p>
+        <p><strong>Color:</strong> ${color}</p>
+        <p><strong>Quantity:</strong> ${quantity}</p>
+    `;
+
+    orderSummaryContainer.innerHTML = orderSummary;
+    orderSummaryContainer.style.display = "block";
+
+    setTimeout(closeForm, 3000);
+  });
