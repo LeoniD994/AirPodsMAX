@@ -42,3 +42,24 @@ document.querySelectorAll(".menu__link").forEach((anchor) => {
     }
   });
 });
+
+
+// Отримуємо кнопку
+const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+// Додаємо обробник події для відображення кнопки при прокручуванні сторінки
+window.addEventListener('scroll', () => {
+  if (window.pageYOffset > 300) {
+    scrollToTopBtn.style.display = 'block';
+  } else {
+    scrollToTopBtn.style.display = 'none';
+  }
+});
+
+// Додаємо обробник події для натискання на кнопку
+scrollToTopBtn.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});

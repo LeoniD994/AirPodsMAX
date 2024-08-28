@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html,
 body,
 div,
@@ -635,6 +636,7 @@ select {
       flex-wrap: wrap;
 }
 
+/* Стиль для кнопки прокрутки вгору */
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -696,4 +698,26 @@ body {
   .main__title {
     font-size: 28px;
   }
+}
+/* Стилі для кнопки повернення вгору */
+.scrollToTopBtn {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  height: 50px;
+  width: 50px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 25px;
+  opacity: 0.7;
+  display: none;
+  -webkit-transition: opacity 0.3s ease, visibility 0.3s;
+  transition: opacity 0.3s ease, visibility 0.3s;
+}
+
+.scrollToTopBtn:hover {
+  opacity: 1;
 }/*# sourceMappingURL=main.css.map */
